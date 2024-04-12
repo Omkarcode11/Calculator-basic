@@ -2,7 +2,6 @@ let res = [];
 let result = "";
 let display = document.getElementById("result");
 
-
 let keys = document.querySelectorAll(".keypad > div").forEach((div) => {
   div.addEventListener("click", (e) => {
     let val = e.target.innerText;
@@ -14,7 +13,7 @@ let keys = document.querySelectorAll(".keypad > div").forEach((div) => {
       let cal;
       try {
         cal = Number(eval(res.join(""))).toFixed(1);
-        if (isNaN(cal) || cal == Infinity) {
+        if (isNaN(cal) || cal == Infinity || cal == undefined) {
           result = "Invalid";
         }
       } catch (err) {
